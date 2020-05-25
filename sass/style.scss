@@ -1,0 +1,449 @@
+/*
+Theme Name: Four
+Theme URI:
+Author:
+Author URI:
+Description:
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: four
+*/
+
+/**
+ * @see https://codex.wordpress.org/CSS#WordPress_Generated_Classes
+ * @see https://coolors.co/ffffff-eeb41e-fed947-0e3566-030817
+ */
+/* =WordPress Core
+-------------------------------------------------------------- */
+@import 'color.scss';
+@import 'wordpress.scss';
+@import 'homepage.scss';
+@import 'custom.scss';
+/**
+ * 色
+$bg-color
+$text-color
+$heading-color
+$h2-color
+$link-color
+$menu-link-color
+$menu-current-color
+$wp-admin-red
+$wp-admin-green
+*/
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+    line-height: 1.7;
+    word-break: break-all;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    background-color: $bg-color;
+    color: $text-color;
+  > * {
+    flex: 1 100%;
+  }
+}
+
+a {
+  &:link {
+    text-decoration: underline;
+    color: $link-color;
+  }
+
+  &:visited {
+    text-decoration: underline;
+    color: $link-color;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $link-color;
+    text-decoration: underline;
+  }
+}
+
+header.global {
+  margin: 0;
+  font-weight: bold;
+
+  h1, p {
+    margin: 50px 20px 0 20px;
+    font-size: 250%;
+    font-family: serif;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-size: 120%;
+  }
+
+  h1 a,
+  p a {
+    &:link {
+      text-decoration: none;
+      color: $heading-color;
+    }
+    &:visited {
+      text-decoration: none;
+      color: $heading-color;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+article .content > *, .sidebar > * {
+  vertical-align: middle;
+  margin: 20px;
+}
+
+article {
+  * *, header, footer {
+    margin: 0;
+  }
+}
+
+.sidebar * * {
+  margin: 0;
+}
+
+article {
+  header, footer {
+    border-radius: 0 3px 3px 0;
+    padding: 10px;
+    background: #FAFAFA;
+  }
+
+  .content {
+    font-size: 90%;
+
+    h2 {
+      border-bottom: 1px solid #333333;
+      margin: 0 0 10px 0;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 150%;
+      font-family: serif;
+      color: $h2-color;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 130%;
+    }
+
+    h4 {
+      font-weight: bold;
+      font-size: 110%;
+    }
+
+    pre {
+      border-radius: 0 5px 5px 0;
+      margin: 20px 5px 20px 0;
+      padding: 30px 20px;
+      background: #111222;
+      color: #FFFFFF;
+
+      code {
+        margin: 0;
+      }
+    }
+
+    blockquote {
+      border-radius: 0 5px 5px 0;
+      margin: 20px 5px 20px 0;
+      padding: 30px 20px;
+      background: #DDDDDD;
+      color: #444444;
+    }
+
+    cite {
+      font-weight: bold;
+    }
+
+    table {
+      display: block;
+      overflow: auto;
+      border-collapse: collapse;
+      border-spacing: 0;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #F1F1F1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #BCBCBC;
+      }
+
+      th, td {
+        border: 1px solid #CCCCCC;
+        padding: 5px 10px;
+      }
+    }
+
+    .content-word-count {
+      color: #EE4356;
+    }
+  }
+}
+
+.sticky .title:before {
+  content: "\f537";
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font: normal 20px/1 'dashicons';
+  vertical-align: middle;
+}
+
+header .title {
+  margin: 10px 0;
+  font-weight: normal;
+  font-size: 120%;
+}
+
+article .meta {
+  margin: 0;
+  padding: 0;
+  font-size: 80%;
+
+  li {
+    list-style-type: none;
+    vertical-align: middle;
+    color: #404040;
+  }
+
+  .post-date, .post-category {
+    margin-right: 10px;
+  }
+
+  .post-date:before {
+    /*
+     * https://developer.wordpress.org/resource/dashicons/#calendar-alt
+     */
+    font-family: 'dashicons';
+    content: "\f508";
+    margin-right: 6px;
+    vertical-align: middle;
+    color: $wp-admin-red;
+  }
+
+  .last-modified:before {
+    /*
+     * https://developer.wordpress.org/resource/dashicons/#update-alt
+     */
+    font-family: 'dashicons';
+    content: "\f113";
+    margin-right: 6px;
+    vertical-align: middle;
+    color: $wp-admin-green;
+  }
+
+  .post-category:before {
+    /*
+     * https://developer.wordpress.org/resource/dashicons/#category
+     */
+    font-family: 'dashicons';
+    content: "\f318";
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  .post-tag:before {
+    /*
+     * https://developer.wordpress.org/resource/dashicons/#tag
+     */
+    font-family: 'dashicons';
+    content: "\f323";
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  a {
+    &:link, &:visited {
+      color: #404040;
+    }
+  }
+}
+
+/**
+ * 最低限のボックスでflexbox
+ * see https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ * see https://codepen.io/chriscoyier/pen/vWEMWw
+ */
+@media all and (min-width: 560px) {
+  .sidebar {
+    flex: 1 auto;
+  }
+}
+
+@media all and (min-width: 960px) {
+  header.global {
+    margin: 0;
+
+    h1, p {
+        margin: 0 150px 10px 150px;    
+    }
+  }
+
+  .main {
+    flex: 2 0px;
+    order: 1;
+  }
+
+  article {
+    .content {
+      > * {
+        margin: 20px 0 20px 150px;
+      }
+
+      h2 {
+        margin: 0 0 10px 0;
+        padding: 10px 150px 5px 150px;
+      }
+
+      pre, blockquote {
+        padding: 30px 150px;
+      }
+
+      * * {
+        margin: 0;
+      }
+    }
+
+    header, footer {
+      border-radius: 0 3px 3px 0;
+      padding: 10px 20px 10px 140px;
+      background: #FAFAFA;
+    }
+
+    header .title {
+      padding: 0 0 0 150px;
+    }
+  }
+
+  .sidebar {
+    order: 2;
+    margin-left: 30px;
+    flex-basis: 200px;
+
+    aside {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .global.footer {
+    order: 3;
+  }
+}
+
+.single header .title, .page header .title {
+  margin: 0 0 0 0;
+  font-weight: normal;
+  font-size: 200%;
+}
+
+.paginate_links {
+  text-align: center;
+}
+
+.page-numbers {
+  padding: 0 3px;
+
+  &.current {
+    font-weight: bold;
+  }
+}
+
+.sidebar {
+  font-size: 90%;
+
+  h2 {
+    font-size: 140%;
+    font-weight: normal;
+    font-family: serif;
+    color: $h2-color;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    list-style: none;
+  }
+}
+
+header, footer {
+  nav {
+    padding: 5px 20px;
+    text-align: left;
+    background: rgba( 0, 0, 0, 0.7 );
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-right: 10px;
+        display: inline;
+        font-family: serif;
+
+        a {
+          &:link, &:visited {
+            text-decoration: none;
+            color: $menu-link-color;
+          }
+        }
+//        &.current-menu-item {
+//          a {
+//            &:link, &:visited {
+//              color: $menu-current-color;
+//            }
+//          }
+//        }
+      }
+
+      li li {
+        border-bottom: none;
+      }
+
+      ul.children {
+        margin: 0;
+        padding-left: 1em;
+      }
+
+      li li:before {
+        content: "\f345";
+        display: inline;
+        -webkit-font-smoothing: antialiased;
+        font: normal 15px/1 'dashicons';
+        vertical-align: middle;
+      }
+
+      ul ul.children li:before {
+        content: "\f139";
+        display: inline;
+        -webkit-font-smoothing: antialiased;
+        font: normal 15px/1 'dashicons';
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
