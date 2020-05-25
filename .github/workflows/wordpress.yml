@@ -1,0 +1,50 @@
+name: four Theme Test
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test: # unit test
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [ ubuntu-20.04 ]
+        php: [ '7.1', '7.2', '7.3' ]
+        wp: [ 'latest', '5.0' ]
+    services:
+      mysql:
+        image: mysql:5.7
+        options: --health-cmd "mysqladmin ping -h localhost" --health-interval 20s --health-timeout 10s --health-retries 10
+        env:
+          MYSQL_ROOT_PASSWORD: root
+    name: WordPress ${{ matrix.wp }} in PHP ${{ matrix.php }} UnitTest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Start MySQL
+        run: sudo systemctl start mysql
+
+      - name: Install WordPress
+        run: bash bin/install-wp-tests.sh wordpress root root 127.0.0.1 ${{ matrix.wp }}
+
+      - name: Run test suite
+        run: composer test
+
+
