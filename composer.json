@@ -1,5 +1,6 @@
 {
     "name": "addshlab/four",
+    "description": "WordPress theme for add.sh",
     "type": "wordpress-theme",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -16,23 +17,23 @@
         "phpunit/phpunit": "7.*",
         "phpcompatibility/phpcompatibility-wp": "*",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3"
-},
-  "config": {
-    "process-timeout": 0,
-    "vendor-dir": "resources/vendor"
-  },
-  "scripts" :{
-    "test": [
-      "resources/vendor/bin/phpcs --config-set installed_paths resources/vendor/phpcompatibility/php-compatibility,resources/vendor/phpcompatibility/phpcompatibility-paragonie,resources/vendor/phpcompatibility/phpcompatibility-wp,resources/vendor/wp-coding-standards/wpcs",
-      "resources/vendor/bin/phpcs -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php",
-      "resources/vendor/bin/phpmd ./ text .phpmd.ruleset.xml --suffixes php --exclude /resources/vendor/,/tests/",
-      "bash bin/phpunit.sh"
-    ],
-    "phpcbf": "resources/vendor/bin/phpcbf -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php",
-    "server": "bash bin/server.sh",
-    "theme-unit-test": "bash bin/theme-unit-test.sh",
-    "theme-unit-test-ja": "bash bin/theme-unit-test-ja.sh",
-    "wpphpunit": "bash bin/wpphpunit.sh",
-    "phpunit": "bash bin/phpunit.sh"
-  }
+    },
+    "config": {
+        "process-timeout": 0,
+        "vendor-dir": "resources/vendor"
+    },
+    "scripts" :{
+        "test": [
+            "resources/vendor/bin/phpcs --config-set installed_paths resources/vendor/phpcompatibility/php-compatibility,resources/vendor/phpcompatibility/phpcompatibility-paragonie,resources/vendor/phpcompatibility/phpcompatibility-wp,resources/vendor/wp-coding-standards/wpcs",
+            "resources/vendor/bin/phpcs -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php",
+            "resources/vendor/bin/phpmd ./ text .phpmd.ruleset.xml --suffixes php --exclude /resources/vendor/,/tests/",
+            "bash bin/phpunit.sh"
+        ],
+        "phpcbf": "resources/vendor/bin/phpcbf -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php",
+        "server": "bash bin/server.sh",
+        "theme-unit-test": "bash bin/theme-unit-test.sh",
+        "theme-unit-test-ja": "bash bin/theme-unit-test-ja.sh",
+        "wpphpunit": "bash bin/wpphpunit.sh",
+        "phpunit": "bash bin/phpunit.sh"
+    }
 }
