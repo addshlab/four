@@ -1,4 +1,4 @@
-name: four Theme Test
+name: unit test
 on:
   push:
     branches:
