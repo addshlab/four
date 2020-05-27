@@ -18,11 +18,6 @@ class PageExists extends WP_UnitTestCase {
         $this->assertTrue( is_404() );
     }
 
-    public function test_is_404() {
-        $this->go_to( home_url() . '?p=99999999' );
-        $this->assertTrue( is_404() );
-    }
-
     public function test_post_content() {
         global $post;
         $post_id = $this->factory->post->create( array( 'post_content' => 'test content' ) );
@@ -32,6 +27,6 @@ class PageExists extends WP_UnitTestCase {
         $content2 = 'test content' . PHP_EOL;
         $this->expectOutputString( $content2 );
         the_content();
-}
+    }
 
 }
