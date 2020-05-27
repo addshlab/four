@@ -24,7 +24,7 @@
     },
     "scripts" :{
         "test": [
-            "echo 'ok'"
+            "phpunit"
         ],
         "phpcbf": "resources/vendor/bin/phpcbf -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php",
         "server": "bash bin/server.sh",
