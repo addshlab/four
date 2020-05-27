@@ -24,7 +24,7 @@ class PageExists extends WP_UnitTestCase {
         $post = get_post( $post_id );
         setup_postdata( $post );
 
-        $content2 = 'test content' . PHP_EOL;
+        $content2 = '<p>test content</p>' . PHP_EOL;
         $this->expectOutputString( $content2 );
         the_content();
     }
