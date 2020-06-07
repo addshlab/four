@@ -162,13 +162,36 @@ article {
       border-radius: 0 5px 5px 0;
       margin: 20px 5px 20px 0;
       padding: 30px 20px;
-      background: #DDDDDD;
-      color: #444444;
+      background: #167fc1;
+      color: #fdfdfd;
+          a {
+              color: #fdfdfd;
+	      text-decoration: none;
+	  }
     }
 
     cite {
-      font-weight: bold;
+        margin: 15px 0 0 0;
+        font-weight: bold;
+	font-style: normal;
+	font-size: 80%;
+        display: block;
+	color: #000;
+
+	a {
+	    color: #000;
+	}
+      
+        &:before {
+            padding: 0 10px 0 0;
+            content: "\f11f";
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+            font: normal 15px/1 'dashicons';
+            vertical-align: middle;
+        }
     }
+
 
     table {
       display: block;
