@@ -4,6 +4,11 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
+ * 除外フィルタ
+ */
+remove_filter( 'the_content', 'wptexturize' );
+
+/**
  * テーマにコンポーネントされていないファイルの検知
  */
 function no_component_files() {
