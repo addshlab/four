@@ -400,6 +400,16 @@ article .content blockquote a {
   text-decoration: none;
 }
 
+article .content blockquote:before {
+  margin: 0 0 0 -50px;
+  content: "\f205";
+  display: inline-block;
+  font: normal 30px/1 'dashicons';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+  float: left;
+}
+
 article .content cite {
   margin: 15px 0 0 0;
   font-weight: bold;

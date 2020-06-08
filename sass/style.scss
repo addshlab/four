@@ -168,6 +168,15 @@ article {
               color: #fdfdfd;
 	      text-decoration: none;
 	  }
+	  &:before {
+	      margin: 0 0 0 -50px;
+	      content: "\f205";
+              display: inline-block;
+              font: normal 30px/1 'dashicons';
+              -webkit-font-smoothing: antialiased;
+              vertical-align: middle;
+	      float: left;
+	  }
     }
 
     cite {
