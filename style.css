@@ -266,7 +266,7 @@ $wp-admin-red
 $wp-admin-green
 */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+  font-family: sans-serif;
   line-height: 1.7;
   word-break: break-all;
   display: flex;
@@ -385,6 +385,16 @@ article .content pre {
 
 article .content pre code {
   margin: 0;
+}
+
+article .content pre code:before {
+  margin: 0 0 0 -50px;
+  content: "\f475";
+  display: inline-block;
+  font: normal 30px/1 'dashicons';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+  float: left;
 }
 
 article .content blockquote {
