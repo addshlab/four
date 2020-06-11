@@ -220,6 +220,7 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 .home.page article .wp-block-group ul.wp-block-latest-posts li {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .home.page article .wp-block-group ul.wp-block-latest-posts li a {
