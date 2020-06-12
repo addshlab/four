@@ -130,7 +130,7 @@
             <?php paginate_comments_links(); ?>
             <?php endif; ?>
 
-            <?php if ( is_single() || is_page() ) : ?>
+            <?php if ( ! is_front_page() && ( is_single() || is_page() ) ) : ?>
             <footer>
                 <ul class="meta">
                     <li class="post-date">
@@ -188,7 +188,7 @@ $sameDayFlag = get_post_time( 'Y-m-d', false );
  * 一般的にsidebar.phpに含められる
  */
 ?>
-<?php if ( is_active_sidebar( 'sidebar-menu' ) ) : ?>
+<?php if ( ! is_front_page() && is_active_sidebar( 'sidebar-menu' ) ) : ?>
 <aside class="sidebar">
         <?php dynamic_sidebar( 'sidebar-menu' ); ?>
 </aside>
