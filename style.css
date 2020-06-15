@@ -434,15 +434,6 @@ article .content cite a {
   color: #000;
 }
 
-article .content cite:before {
-  padding: 0 10px 0 0;
-  content: "\f11f";
-  display: inline-block;
-  -webkit-font-smoothing: antialiased;
-  font: normal 15px/1 'dashicons';
-  vertical-align: middle;
-}
-
 article .content table {
   display: block;
   overflow: auto;
