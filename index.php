@@ -188,7 +188,7 @@ $sameDayFlag = get_post_time( 'Y-m-d', false );
  * 一般的にsidebar.phpに含められる
  */
 ?>
-<?php if ( ! is_front_page() && is_active_sidebar( 'sidebar-menu' ) ) : ?>
+<?php if ( ( get_option( 'show_on_front' ) === 'page' && ! is_front_page() ) && is_active_sidebar( 'sidebar-menu' ) ) : ?>
 <aside class="sidebar">
         <?php dynamic_sidebar( 'sidebar-menu' ); ?>
 </aside>
