@@ -254,18 +254,6 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
   order: 2;
 }
 
-/**
- * 色
-$bg-color
-$text-color
-$heading-color
-$h2-color
-$link-color
-$menu-link-color
-$menu-current-color
-$wp-admin-red
-$wp-admin-green
-*/
 body {
   font-family: sans-serif;
   line-height: 1.7;
@@ -273,7 +261,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   margin: 0;
-  background-color: #061F2F;
+  background-color: #0a2d44;
   color: #efefef;
 }
 
@@ -313,6 +301,7 @@ header.global h1, header.global p {
 }
 
 header.global .subtitle {
+  margin-bottom: 10px;
   font-size: 120%;
 }
 
@@ -346,10 +335,17 @@ article * *, article header, article footer {
   margin: 0;
 }
 
-article header, article footer {
-  border-radius: 0 3px 3px 0;
+article header {
+  border-radius: 0;
   padding: 10px;
-  background: #FAFAFA;
+  background: #05141e;
+}
+
+article footer {
+  border-radius: 0;
+  margin: 0 0 1px 0;
+  padding: 10px;
+  background: #05141e;
 }
 
 article .content {
@@ -357,13 +353,13 @@ article .content {
 }
 
 article .content h2 {
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid #1d4a65;
   margin: 0 0 10px 0;
   padding: 10px 20px;
   font-weight: bold;
   font-size: 150%;
   font-family: serif;
-  color: #6595c7;
+  color: #e2f4ff;
 }
 
 article .content h3 {
@@ -377,8 +373,8 @@ article .content h4 {
 }
 
 article .content pre {
-  border-radius: 0 5px 5px 0;
-  margin: 20px 5px 20px 0;
+  border-radius: 0;
+  margin: 20px 0 20px 0;
   padding: 30px 20px;
   background: #111222;
   color: #FFFFFF;
@@ -399,9 +395,9 @@ article .content pre code:before {
 }
 
 article .content blockquote {
-  border-radius: 0 5px 5px 0;
-  margin: 20px 5px 20px 0;
-  padding: 30px 20px;
+  border-radius: 0;
+  margin: 20px 0 20px 0;
+  padding: 30px 20px 30px 60px;
   background: #167fc1;
   color: #fdfdfd;
 }
@@ -485,7 +481,7 @@ article .meta {
 article .meta li {
   list-style-type: none;
   vertical-align: middle;
-  color: #404040;
+  color: #6595c7;
 }
 
 article .meta .post-date, article .meta .post-category {
@@ -500,7 +496,6 @@ article .meta .post-date:before {
   content: "\f508";
   margin-right: 6px;
   vertical-align: middle;
-  color: #dc3232;
 }
 
 article .meta .last-modified:before {
@@ -568,18 +563,29 @@ article .meta a:link, article .meta a:visited {
     padding: 10px 150px 5px 150px;
   }
   article .content pre, article .content blockquote {
+    border-radius: 0 5px 5px 0;
     padding: 30px 150px;
+  }
+  article .content pre:before, article .content blockquote:before {
+    margin: 0 0 0 -50px;
   }
   article .content * * {
     margin: 0;
   }
-  article header, article footer {
+  article header {
     border-radius: 0 3px 3px 0;
-    padding: 10px 20px 10px 140px;
-    background: #FAFAFA;
+    margin: 0;
+    padding: 7px 20px 7px 150px;
+    background: #05141e;
   }
   article header .title {
     padding: 0 0 0 150px;
+  }
+  article footer {
+    border-radius: 0 3px 0 0;
+    margin: 0 0 1px 0;
+    padding: 10px 20px 10px 150px;
+    background: #05141e;
   }
   .sidebar {
     order: 2;
@@ -620,7 +626,7 @@ article .meta a:link, article .meta a:visited {
   font-size: 140%;
   font-weight: normal;
   font-family: serif;
-  color: #6595c7;
+  color: #e2f4ff;
 }
 
 .sidebar ul {
