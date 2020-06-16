@@ -378,6 +378,7 @@ article .content pre {
   padding: 30px 20px;
   background: #111222;
   color: #FFFFFF;
+  white-space: pre-wrap;
 }
 
 article .content pre code {
