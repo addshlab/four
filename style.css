@@ -636,8 +636,8 @@ article .meta a:link, article .meta a:visited {
 }
 
 .sidebar li {
-  margin: 0;
-  list-style: none;
+  margin: 0 0 0 1.7em;
+  list-style: disc;
 }
 
 header nav, footer nav {
