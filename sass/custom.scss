@@ -1,9 +1,22 @@
 .amazon-associate {
     display: flex;
+    background: #FFFFFF;
+    color: #000000;
+    margin: 0 20px;
+    padding: 20px;
+    border-radius: 5px;
     p {
         order: 1;
     }
     ul {
         order: 2;
+    }
+    a {
+	&:link,
+	&:visited,
+	&:hover,
+	&:active {
+    		color: #000000;
+	}
     }
 }

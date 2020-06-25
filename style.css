@@ -244,6 +244,11 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 
 .amazon-associate {
   display: flex;
+  background: #FFFFFF;
+  color: #000000;
+  margin: 0 20px;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .amazon-associate p {
@@ -252,6 +257,10 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 
 .amazon-associate ul {
   order: 2;
+}
+
+.amazon-associate a:link, .amazon-associate a:visited, .amazon-associate a:hover, .amazon-associate a:active {
+  color: #000000;
 }
 
 body {
@@ -302,7 +311,7 @@ header.global h1, header.global p {
 
 header.global .subtitle {
   margin-bottom: 10px;
-  font-size: 120%;
+  font-size: 150%;
 }
 
 header.global h1 a:link,
@@ -348,18 +357,18 @@ article footer {
   background: #05141e;
 }
 
-article .content {
-  font-size: 90%;
-}
-
 article .content h2 {
   border-bottom: 1px solid #1d4a65;
   margin: 0 0 10px 0;
   padding: 10px 20px;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 150%;
   font-family: serif;
   color: #e2f4ff;
+}
+
+article .content h2 a {
+  text-decoration: none;
 }
 
 article .content h3 {
