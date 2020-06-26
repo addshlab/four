@@ -67,9 +67,17 @@
         </article>
 <?php elseif ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+	// その日最初の投稿チェック
+	if( $post_day_check !== get_post_time( 'Y-m-d', false ) ) {
+		$sameDayFlag = true;
+	} else {
+		$sameDayFlag = false;
+	}
+?>
 
-        <?php if( $sameDayFlag !== get_post_time( 'Y-m-d', false ) ) : ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class( $sameDayFlag ); ?>>
+        <?php if( $sameDayFlag ) : ?>
 <?php
 /**
  * 投稿タイトルの表示
@@ -86,7 +94,7 @@
                     </li>
                 </ul>
             </header>
-                <?php endif; ?>
+            <?php endif; ?>
 
         <?php endif; ?>
 <?php
@@ -162,7 +170,7 @@
 /**
  * アーカイブページで同じ日の投稿を検知するための変数
  */
-$sameDayFlag = get_post_time( 'Y-m-d', false );
+$post_day_check = get_post_time( 'Y-m-d', false );
 ?>
 
 <?php endwhile; ?>

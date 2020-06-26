@@ -359,7 +359,7 @@ article footer {
 
 article .content h2 {
   border-bottom: 1px solid #1d4a65;
-  margin: 0 0 10px 0;
+  margin: 0 0 0 0;
   padding: 10px 20px;
   font-weight: normal;
   font-size: 150%;
@@ -569,8 +569,7 @@ article .meta a:link, article .meta a:visited {
     margin: 20px 0 20px 150px;
   }
   article .content h2 {
-    margin: 0 0 10px 0;
-    padding: 10px 150px 5px 150px;
+    padding: 10px 150px 7px 150px;
   }
   article .content pre, article .content blockquote {
     border-radius: 0 5px 5px 0;
@@ -584,7 +583,7 @@ article .meta a:link, article .meta a:visited {
   }
   article header {
     border-radius: 0 3px 3px 0;
-    margin: 0;
+    margin: -1px 0 0 0;
     padding: 7px 20px 7px 150px;
     background: #05141e;
   }
