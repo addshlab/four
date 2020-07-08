@@ -616,6 +616,7 @@ article .meta a:link, article .meta a:visited {
 }
 
 .paginate_links {
+  margin: 10px 0;
   text-align: center;
 }
 
