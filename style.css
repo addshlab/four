@@ -303,10 +303,11 @@ header.global {
 }
 
 header.global h1, header.global p {
-  margin: 50px 20px 0 20px;
+  margin: 0 20px 20px 20px;
   font-size: 250%;
   font-family: serif;
   font-weight: bold;
+  line-height: 1em;
 }
 
 header.global .subtitle {
@@ -361,9 +362,9 @@ article .content h2 {
   border-bottom: 1px solid #1d4a65;
   margin: 0 0 0 0;
   padding: 10px 20px;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 150%;
-  font-family: serif;
+  font-family: sans-serif;
   color: #e2f4ff;
 }
 
@@ -559,7 +560,7 @@ article .meta a:link, article .meta a:visited {
     margin: 0;
   }
   header.global h1, header.global p {
-    margin: 0 150px 10px 150px;
+    margin: 0 150px 20px 150px;
   }
   .main {
     flex: 2 0px;
@@ -647,6 +648,10 @@ article .meta a:link, article .meta a:visited {
 .sidebar li {
   margin: 0 0 0 1.7em;
   list-style: disc;
+}
+
+header nav {
+  margin: 0 0 20px 0;
 }
 
 header nav, footer nav {
