@@ -374,12 +374,17 @@ article .content h2 a {
 
 article .content h3 {
   font-weight: bold;
-  font-size: 120%;
+  font-size: 130%;
 }
 
 article .content h4 {
   font-weight: bold;
   font-size: 110%;
+}
+
+article .content p, article .content li {
+  color: #d4d4d4;
+  font-weight: 90%;
 }
 
 article .content pre {
