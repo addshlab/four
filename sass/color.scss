@@ -88,7 +88,8 @@ $wp-admin-green: #46b450;
 
 /* ダークモードOFF */
 .color-mode label:before {
-    border: 1px solid #d0d0d0;
+    border: 2px solid #d0d0d0;
+    border-right: 0;
     border-radius: 50px 0 0 50px;
     padding: 9px 5px;
     content: '暗';
@@ -103,7 +104,7 @@ $wp-admin-green: #46b450;
 /* ライトモードON*/
 .color-mode label:after {
     //border: 1px solid #0678c4;
-    border: 2px solid #ffcd05;
+    border: 2px solid #d3aa02;
     border-left: 0;
     border-radius: 0 50px 50px 0;
     padding: 9px 5px;
@@ -138,7 +139,8 @@ $wp-admin-green: #46b450;
 
 /* ライトモード OFF */
 .color-mode input:checked + label:after {
-    border: 1px solid #d0d0d0;
+    border: 2px solid #d0d0d0;
+    border-left: 0;
     background: #ffffff;
     // color: #777777;
     font-weight: normal;
