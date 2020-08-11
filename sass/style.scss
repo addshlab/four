@@ -28,22 +28,22 @@ body {
     display: flex;
     flex-flow: row wrap;
     margin: 0;
-    background-color: $body-bg;
-    color: $text-color;
-  > * {
-    flex: 1 100%;
-  }
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    > * {
+        flex: 1 100%;
+    }
 }
 
 a {
   &:link {
     text-decoration: underline;
-    color: $link-color;
+    color: var(--link-color);
   }
 
   &:visited {
     text-decoration: underline;
-    color: $link-color;
+    color: var(--link-color);
   }
 
   &:hover {
@@ -51,7 +51,7 @@ a {
   }
 
   &:active {
-    color: $link-color;
+    color: var(--link-color);
     text-decoration: underline;
   }
 }
@@ -77,11 +77,11 @@ header.global {
   p a {
     &:link {
       text-decoration: none;
-      color: $heading-color;
+      color: var(--heading-color);
     }
     &:visited {
       text-decoration: none;
-      color: $heading-color;
+      color: var(--heading-color);
     }
   }
 }
@@ -106,136 +106,24 @@ article {
   margin: 0;
 }
 
+
 article {
 
   header {
     border-radius: 0;
     padding: 10px;
-    background: $article-header-bg;
+    background: var(--article-header-bg);
   }
 
   footer {
     border-radius: 0;
     margin: 0 0 1px 0;
     padding: 10px;
-    background: $article-header-bg; 
+    background: var(--article-header-bg); 
   }
 
   .content {
-
-    h2 {
-      border-bottom: 1px solid $article-h2-border;
-      margin: 0 0 0 0;
-      padding: 10px 20px;
-      font-weight: bold;
-      font-size: 150%;
-      font-family: sans-serif;
-      color: $article-h2;
-      a {
-      	text-decoration: none;
-      }
-    }
-
-    h3 {
-      font-weight: bold;
-      font-size: 130%;
-    }
-
-    h4 {
-      font-weight: bold;
-      font-size: 110%;
-    }
-
-    p, li {
-        color: #d4d4d4;
-	font-weight: 90%;
-    }
-
-    pre {
-      border-radius: 0;
-      margin: 20px 0 20px 0;
-      padding: 30px 20px;
-      background: #111222;
-      color: #FFFFFF;
-      white-space: pre-wrap;
-
-      code {
-        margin: 0;
-	&:before {
-	      margin: 0 0 0 -50px;
-	      content: "\f475";
-              display: inline-block;
-              font: normal 30px/1 'dashicons';
-              -webkit-font-smoothing: antialiased;
-              vertical-align: middle;
-	      float: left;
-	  }
-
-      }
-    }
-
-    blockquote {
-      border-radius: 0;
-      margin: 20px 0 20px 0;
-      padding: 30px 20px 30px 60px;
-      background: #167fc1;
-      color: #fdfdfd;
-          a {
-              color: #fdfdfd;
-	      text-decoration: none;
-	  }
-	  &:before {
-	      margin: 0 0 0 -50px;
-	      content: "\f205";
-              display: inline-block;
-              font: normal 30px/1 'dashicons';
-              -webkit-font-smoothing: antialiased;
-              vertical-align: middle;
-	      float: left;
-	  }
-    }
-
-    cite {
-        margin: 15px 0 0 0;
-        font-weight: bold;
-	font-style: normal;
-	font-size: 80%;
-        display: block;
-	color: #000;
-
-	a {
-	    color: #000;
-	}
-    }
-
-
-    table {
-      display: block;
-      overflow: auto;
-      border-collapse: collapse;
-      border-spacing: 0;
-
-      &::-webkit-scrollbar {
-        height: 5px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: #F1F1F1;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: #BCBCBC;
-      }
-
-      th, td {
-        border: 1px solid #CCCCCC;
-        padding: 5px 10px;
-      }
-    }
-
-    .content-word-count {
-      color: #EE4356;
-    }
+    @import 'content.scss';
   }
 }
 
@@ -261,7 +149,7 @@ article .meta {
   li {
     list-style-type: none;
     vertical-align: middle;
-    color: $article-header-txt;
+    color: var(--article-header-txt);
   }
 
   .post-date, .post-category {
@@ -286,7 +174,7 @@ article .meta {
     content: "\f113";
     margin-right: 6px;
     vertical-align: middle;
-    color: $wp-admin-green;
+    color: var(--wp-admin-green);
   }
 
   .post-category:before {
@@ -323,7 +211,7 @@ article .meta {
  */
 @media all and (min-width: 560px) {
   .sidebar {
-    flex: 1 auto;
+    flex: 1 auto auto;
   }
 }
 
@@ -337,7 +225,7 @@ article .meta {
   }
 
   .main {
-    flex: 2 0px;
+    flex: 2 0 0%;
     order: 1;
   }
 
@@ -368,7 +256,7 @@ article .meta {
       border-radius: 0 3px 3px 0;
       margin: -1px 0 0 0;
       padding: 7px 20px 7px 150px;
-      background: $article-header-bg;
+      background: var(--article-header-bg);
       .title {
         padding: 0 0 0 150px;
       }
@@ -378,7 +266,7 @@ article .meta {
       border-radius: 0 3px 0 0;
       margin: 0 0 1px 0;
       padding: 10px 20px 10px 150px;
-      background: $article-header-bg;
+      background: var(--article-header-bg);
     }
 
   }
@@ -424,7 +312,7 @@ article .meta {
     font-size: 140%;
     font-weight: normal;
     font-family: serif;
-    color: $article-h2;
+    color: var(--article-h2);
   }
 
   ul {
@@ -446,7 +334,7 @@ header, footer {
   nav {
     padding: 5px 20px;
     text-align: left;
-    background: rgba( 0, 0, 0, 0.7 );
+    background: var(--header-nav-bg);
 
     ul {
       list-style-type: none;
@@ -461,7 +349,7 @@ header, footer {
         a {
           &:link, &:visited {
             text-decoration: none;
-            color: $menu-link-color;
+            color: var(--menu-link-color);
           }
         }
       }

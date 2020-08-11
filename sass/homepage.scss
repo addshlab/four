@@ -18,10 +18,11 @@
         }    
     }
     article .wp-block-group {
+	border: var(--home-block-border);
         border-radius: 3px;
         margin: 0 0 20px 0;
         padding: 20px;
-        background: rgba(0,0,0,0.7);
+        background: var(--home-block-bg);
 
         h2 {
             margin: 0 0 10px 0;

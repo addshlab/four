@@ -17,6 +17,11 @@
     <?php wp_nav_menu( array( 'theme_location' => 'header' ) ); ?>
     </nav>
 
+    <div class="color-mode">
+        <input id="color-mode" name="dark" <?php dark_mode_checked(); ?> type="checkbox">
+        <label for="color-mode"></label>
+    </div>
+
     <?php if ( is_home() || is_front_page() ) : ?>
     <h1>
     <?php else : ?>

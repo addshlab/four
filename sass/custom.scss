@@ -1,7 +1,8 @@
 .amazon-associate {
+    border: var(--amazon-associate-border);
     display: flex;
-    background: #FFFFFF;
-    color: #000000;
+    background: var(--amazon-associate-bg);
+    color: var(--amazon-associate-txt);
     margin: 0 20px;
     padding: 20px;
     border-radius: 5px;
@@ -16,7 +17,7 @@
 	&:visited,
 	&:hover,
 	&:active {
-    		color: #000000;
+    		color: var(--amazon-associate-link);
 	}
     }
 }

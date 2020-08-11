@@ -1,0 +1,43 @@
+@import 'color.scss';
+
+body {
+    font-family: sans-serif;
+    line-height: 1.7;
+    word-break: break-all;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    background-color: $body-bg;
+    color: $text-color;
+  > * {
+    flex: 1 100%;
+  }
+}
+
+a {
+  &:link {
+    text-decoration: underline;
+    color: $link-color;
+  }
+
+  &:visited {
+    text-decoration: underline;
+    color: $link-color;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $link-color;
+    text-decoration: underline;
+  }
+}
+
+.editor-post-title__input {
+    color: #FFFFFF;
+}
+
+@import 'content.scss';
+

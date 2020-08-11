@@ -1,6 +1,61 @@
 /**
- * 変数
+ * 色
  */
+
+:root {
+    --body-bg: #ffffff;
+
+    --header-nav-bg: #000000;
+
+    --article-header-bg: #eeeeee;
+    --article-header-txt: #333333;
+    --article-h2: #000000;
+    --article-h2-border: #1d4a65;
+
+    --text-color: #000000;
+    --heading-color: #000000;
+    --link-color: #000000;
+    --menu-link-color: #FFFFFF;
+    --menu-current-color: #6595c7;
+    --wp-admin-red: #dc3232;
+    --wp-admin-green: #46b450;
+
+    --amazon-associate-border: 1px solid #000000;
+    --amazon-associate-bg: #ffffff;
+    --amazon-associate-txt: #000000;
+    --amazon-associate-link: #000000;
+
+    --home-block-border: 1px solid #000000;
+    --home-block-bg: none;
+} 
+
+[data-mode='dark'] {
+    --body-bg: #0a2d44;
+
+    --header-nav-bg: rgba(0,0,0,0.7);
+
+    --article-header-bg: #05141e;
+    --article-header-txt: #6595c7;
+    --article-h2: #e2f4ff;
+    --article-h2-border: #1d4a65;
+
+    --text-color: #efefef;
+    --heading-color: #e49f45;
+    --link-color: #ffffff;
+    --menu-link-color: #FFFFFF;
+    --menu-current-color: #6595c7;
+    --wp-admin-red: #dc3232;
+    --wp-admin-green: #46b450;
+
+    --amazon-associate-border: none;
+    --amazon-associate-bg: #ffffff;
+    --amazon-associate-txt: #000000;
+    --amazon-associate-link: #000000;
+
+    --home-block-border: none;
+    --home-block-bg: rgba(0,0,0,0.7);
+}
+
 $body-bg: #0a2d44;
 $article-header-bg: #05141e;
 $article-header-txt: #6595c7;
@@ -15,3 +70,80 @@ $menu-current-color: #6595c7;
 $wp-admin-red: #dc3232;
 $wp-admin-green: #46b450;
 
+/* カラーモード切り替え */
+.color-mode {
+    margin: 0 10px 10px 0;
+    text-align: right;
+    float: right;
+}
+
+.color-mode input {
+    display: none;
+}
+.color-mode label {
+    //padding: 12px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* ダークモードOFF */
+.color-mode label:before {
+    border: 1px solid #d0d0d0;
+    border-radius: 50px 0 0 50px;
+    padding: 9px 5px;
+    content: '暗';
+    background: #ffffff;
+    color: #777777;
+    font-weight: normal;
+    //width: 100px;
+    width: 10px;
+    text-align: center;
+    display: inline-block;
+}
+/* ライトモードON*/
+.color-mode label:after {
+    //border: 1px solid #0678c4;
+    border: 2px solid #ffcd05;
+    border-left: 0;
+    border-radius: 0 50px 50px 0;
+    padding: 9px 5px;
+    content: '明';
+    // background: #f2f8fc;
+    background: #ffe168;
+    //color: #0678c4;
+    color: #333333;
+    //width: 100px;
+    width: 10px;
+    text-align: center;
+    display: inline-block;
+
+}
+.color-mode input + label:hover:before {
+    background: #ffffff;
+    color: #777777;
+}
+/* ダークモードON */
+.color-mode input:checked + label:before {
+    //border: 1px solid #0678c4;
+    border: 2px solid #000000;
+    border-right: 0;
+    //background: #f2f8fc;
+    background: #333333;
+    //color: #0678c4;
+    color: #e49f45;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+/* ライトモード OFF */
+.color-mode input:checked + label:after {
+    border: 1px solid #d0d0d0;
+    background: #ffffff;
+    // color: #777777;
+    font-weight: normal;
+}
+.color-mode input:checked + label:hover:after {
+    background: #ffffff;
+    color: #777777;
+}

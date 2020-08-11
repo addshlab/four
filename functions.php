@@ -57,8 +57,90 @@ add_action ( 'admin_notices', 'no_component_files' );
  */
 function enqueue_scripts() {
     wp_enqueue_style( 'dashicons', site_url( '/' ) . '/wp-includes/css/dashicons.min.css' );
+    wp_enqueue_script( 'js-cookie', get_template_directory_uri() . '/lib/js.cookie.min.js', array(), '2.2.1', false );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+
+/**
+ * ダークモード切替
+ */
+function darkmode_js() {
+    $output = <<<EOM
+<script>
+var toggle_color = ''
+var os_color = ''
+const saved_value = Cookies.get('color_theme_value');
+
+if (!saved_value) {
+    // Cookieが存在しなければOSのダークモード判定
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-mode', 'dark')
+        var os_color = 'dark'
+    } else {
+        document.documentElement.setAttribute('data-mode', 'light')
+        var os_color = 'light'
+    }
+} else {
+    if (saved_value=='dark') {
+        document.documentElement.setAttribute('data-mode', 'dark')
+        //var os_color = 'dark'
+    } else {
+        document.documentElement.setAttribute('data-mode', 'light')
+        //var os_color = 'light'
+    }
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+  if (e.matches) {
+    document.documentElement.setAttribute('data-mode', 'dark')
+  } else {
+    document.documentElement.setAttribute('data-mode', 'light')
+    var color = 'light'
+  }
+});
+
+
+// トグルボタンでダークモード切り替え
+const btn = document.querySelector("#color-mode");
+ 
+btn.addEventListener("change", () => {
+  if (btn.checked == true) {
+    document.documentElement.setAttribute('data-mode', 'dark')
+    toggle_color = 'dark'
+  } else {
+    document.documentElement.setAttribute('data-mode', 'light')
+    toggle_color = 'light'
+  }
+});
+
+// Cookie保存
+
+jQuery("#color-mode").change(function(e){
+    if (!toggle_color) {
+        save_value = os_color
+    } else {
+        save_value = toggle_color
+    }
+console.log(save_value);
+Cookies.set('color_theme_value', save_value , { expires: 7 });
+});
+</script>
+EOM;
+    echo $output;
+}
+add_action( 'wp_footer', 'darkmode_js' );
+
+function dark_mode_checked() {
+    if ( $color_theme_value = $_COOKIE['color_theme_value'] ) {
+	if ( 'dark' === $color_theme_value ) {
+            echo 'checked';
+	} else {
+	    echo '';
+	}
+    } else {
+        echo '';
+    }
+}
 
 /**
  * style.cssにファイルタイムスタンプ由来のフィンガープリントを付与
@@ -77,6 +159,8 @@ function custom_theme_setup() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'custom-logo' );
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'editor-style.css' );
 }
 add_action( 'after_setup_theme', 'custom_theme_setup' );
 
