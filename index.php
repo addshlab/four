@@ -57,7 +57,7 @@
 
 <main class="main">
 
-<?php if ( !is_home() && is_active_sidebar( 'before-post-contents' ) ) : ?>
+<?php if ( ( get_option( 'show_on_front' ) !== 'page' || ! is_front_page() ) && is_active_sidebar( 'before-post-contents' ) ) : ?>
         <article>
         <?php dynamic_sidebar( 'before-post-contents' ); ?>
         </article>
@@ -187,7 +187,7 @@ $post_day_check = get_post_time( 'Y-m-d', false );
 </article>
 <?php endif; ?>
 
-<?php if ( !is_home() && is_active_sidebar( 'after-post-contents' ) ) : ?>
+<?php if ( ( get_option( 'show_on_front' ) !== 'page' || ! is_front_page() ) && is_active_sidebar( 'after-post-contents' ) ) : ?>
         <article>
         <?php dynamic_sidebar( 'after-post-contents' ); ?>
         </article>
