@@ -76,6 +76,8 @@ if (!saved_value) {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.setAttribute('data-mode', 'dark')
         var os_color = 'dark'
+        // Cookieが存在しなければトグル用のチェックボックスをcheckedにする
+	jQuery('#color-mode').prop('checked', true);
     } else {
         document.documentElement.setAttribute('data-mode', 'light')
         var os_color = 'light'
@@ -121,8 +123,7 @@ jQuery("#color-mode").change(function(e){
     } else {
         save_value = toggle_color
     }
-console.log(save_value);
-Cookies.set('color_theme_value', save_value , { expires: 7 });
+    Cookies.set('color_theme_value', save_value , { expires: 7 });
 });
 </script>
 EOM;
@@ -259,6 +260,17 @@ function theme_slug_widgets_init() {
             'name' => __( 'Before post contents', 'four' ),
             'id' => 'before-post-contents',
             'description' => __( 'Display before post contents.', 'four' ),
+            'before_widget' => '<div class="content">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2>',
+            'after_title'   => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => __( 'After post contents', 'four' ),
+            'id' => 'after-post-contents',
+            'description' => __( 'Display after post contents.', 'four' ),
             'before_widget' => '<div class="content">',
             'after_widget'  => '</div>',
             'before_title'  => '<h2>',

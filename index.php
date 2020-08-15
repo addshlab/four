@@ -57,7 +57,7 @@
 
 <main class="main">
 
-<?php if ( is_home() && is_active_sidebar( 'before-post-contents' ) ) : ?>
+<?php if ( !is_home() && is_active_sidebar( 'before-post-contents' ) ) : ?>
         <article>
         <?php dynamic_sidebar( 'before-post-contents' ); ?>
         </article>
@@ -185,6 +185,12 @@ $post_day_check = get_post_time( 'Y-m-d', false );
 <p>記事がありません。</p>
 </div>
 </article>
+<?php endif; ?>
+
+<?php if ( !is_home() && is_active_sidebar( 'after-post-contents' ) ) : ?>
+        <article>
+        <?php dynamic_sidebar( 'after-post-contents' ); ?>
+        </article>
 <?php endif; ?>
 
     <nav class="paginate_links">

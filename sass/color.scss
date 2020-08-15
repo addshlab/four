@@ -126,12 +126,12 @@ $wp-admin-green: #46b450;
 /* ダークモードON */
 .color-mode input:checked + label:before {
     //border: 1px solid #0678c4;
-    border: 2px solid #000000;
+    border: 2px solid #3372df;
     border-right: 0;
     //background: #f2f8fc;
-    background: #333333;
+    background: #34b8f8;
     //color: #0678c4;
-    color: #e49f45;
+    color: #000000;
     font-weight: bold;
     display: inline-block;
     text-align: center;
