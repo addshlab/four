@@ -14,26 +14,5 @@ body {
   }
 }
 
-a {
-  &:link {
-    text-decoration: underline;
-    color: $link-color;
-  }
-
-  &:visited {
-    text-decoration: underline;
-    color: $link-color;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:active {
-    color: $link-color;
-    text-decoration: underline;
-  }
-}
-
 @import 'content.scss';
 
