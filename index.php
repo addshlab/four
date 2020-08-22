@@ -92,10 +92,14 @@
             <?php if ( is_home() || is_single() || is_archive() || is_search() ) : ?>
             <header>
                 <ul class="meta">
-                    <li class="post-date">
+		    <li class="post-date">
+                        POST DATE: 
                         <time datetime="<?php echo get_post_time( 'Y-m-d\TH:i:s\Z', false ); ?>">
                         <?php echo get_post_time( 'Y-m-d', false ); ?>
                         </time>
+		    </li>
+		    <li>
+                        WORD COUNT: <?php echo mb_strlen( strip_tags( get_the_content() ) ); ?>
                     </li>
                 </ul>
             </header>
@@ -146,23 +150,25 @@
             <?php if ( ! is_front_page() && ( is_single() || is_page() ) ) : ?>
             <footer>
                 <ul class="meta">
-                    <li class="post-date">
+		    <li class="post-date">
+                        POST DATE: 
                         <time datetime="<?php echo get_post_time( 'Y-m-d\TH:i:s\Z', false ); ?>">
                         <?php echo get_post_time( 'Y-m-d H:i:sP', false ); ?>
                         </time>(GMT: <time datetime="<?php echo get_post_time( 'Y-m-d\TH:i:s\Z', true ); ?>"><?php echo get_post_time( 'Y-m-d H:i:sP', true ); ?></time>)
                     </li>
                     <?php if ( get_post_time( 'U' ) !== get_post_modified_time( 'U' ) ) : ?>
-                    <li class="last-modified">
+		    <li class="last-modified">
+                        LAST MODIFIED: 
                         <time datetime="<?php echo get_post_modified_time( 'Y-m-d\TH:i:s\Z', false ); ?>">
                         <?php echo get_post_modified_time( 'Y-m-d H:i:sP', false ); ?>
                         </time>(GMT: <time datetime="<?php echo get_post_modified_time( 'Y-m-d\TH:i:s\Z', true ); ?>"><?php echo get_post_modified_time( 'Y-m-d H:i:sP', true ); ?></time>)
                     </li>
                     <?php endif; ?>
-                    <?php if ( has_category() ) : ?>
-                    <li class="post-category"><?php the_category( ', ' ); ?></li>
+		    <?php if ( has_category() ) : ?>
+                    <li class="post-category">CATEGORY: <?php the_category( ', ' ); ?></li>
                     <?php endif; ?>
                     <?php if ( has_tag() ) : ?>
-                    <li class="post-tag"><?php the_tags( '', ', ', '' ); ?></li>
+                    <li class="post-tag">TAG: <?php the_tags( '', ', ', '' ); ?></li>
                     <?php endif; ?>
                 </ul>
             </footer>

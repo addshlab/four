@@ -144,7 +144,8 @@ header .title {
 article .meta {
   margin: 0;
   padding: 0;
-  font-size: 80%;
+  font-size: 75%;
+  font-family: monospace, sans-serif;
 
   li {
     list-style-type: none;
@@ -160,41 +161,41 @@ article .meta {
     /*
      * https://developer.wordpress.org/resource/dashicons/#calendar-alt
      */
-    font-family: 'dashicons';
-    content: "\f508";
-    margin-right: 6px;
-    vertical-align: middle;
+    //font-family: 'dashicons';
+    //content: "\f508";
+    //margin-right: 6px;
+    //vertical-align: middle;
   }
 
   .last-modified:before {
     /*
      * https://developer.wordpress.org/resource/dashicons/#update-alt
      */
-    font-family: 'dashicons';
-    content: "\f113";
-    margin-right: 6px;
-    vertical-align: middle;
-    color: var(--wp-admin-green);
+    //font-family: 'dashicons';
+    //content: "\f113";
+    //margin-right: 6px;
+    //vertical-align: middle;
+    //color: var(--wp-admin-green);
   }
 
   .post-category:before {
     /*
      * https://developer.wordpress.org/resource/dashicons/#category
      */
-    font-family: 'dashicons';
-    content: "\f318";
-    margin-right: 5px;
-    vertical-align: middle;
+    //font-family: 'dashicons';
+    //content: "\f318";
+    //margin-right: 5px;
+    //vertical-align: middle;
   }
 
   .post-tag:before {
     /*
      * https://developer.wordpress.org/resource/dashicons/#tag
      */
-    font-family: 'dashicons';
-    content: "\f323";
-    margin-right: 5px;
-    vertical-align: middle;
+    //font-family: 'dashicons';
+    //content: "\f323";
+    //margin-right: 5px;
+    //vertical-align: middle;
   }
 
   a {
