@@ -1,12 +1,13 @@
 @import 'color.scss';
 
 h2 {
-    border-bottom: 1px solid var(--article-h2-border);
-    margin: 0 0 0 0;
-    padding: 10px 20px;
+    border-bottom: 5px solid var(--article-h2-border);
+    margin: 0 20px;
+    padding: 10px 0 5px 0;
     font-weight: bold;
     font-size: 150%;
     font-family: sans-serif;
+    line-height: 1.2em;
     color: var(--article-h2);
     a {
         text-decoration: none;
@@ -15,7 +16,7 @@ h2 {
 
 h3 {
     font-weight: bold;
-    font-size: 130%;
+    font-size: 120%;
 }
 
 h4 {
@@ -39,7 +40,7 @@ dd {
     pre,
     div.wp-block-code {
         border: none;
-	border-radius: 0;
+        border-radius: 0;
         margin: 20px 0 20px 0;
         padding: 30px 20px;
         background: #111222;
@@ -48,17 +49,17 @@ dd {
 
         code {
             margin: 0;
-	    &:before {
-	        margin: 0 0 0 -50px;
-	        content: "\f475";
+            &:before {
+                margin: 0 0 0 -50px;
+                content: "\f475";
                 display: inline-block;
                 font: normal 30px/1 'dashicons';
                 -webkit-font-smoothing: antialiased;
                 vertical-align: middle;
-	        float: left;
-	    }
+                float: left;
+            }
         }
-      }
+    }
 
     blockquote {
       border-radius: 0;
@@ -66,34 +67,32 @@ dd {
       padding: 30px 20px 30px 60px;
       background: #167fc1;
       color: #fdfdfd;
-          a {
-              color: #fdfdfd;
-	      text-decoration: none;
-	  }
-	  &:before {
-	      margin: 0 0 0 -50px;
-	      content: "\f205";
-              display: inline-block;
-              font: normal 30px/1 'dashicons';
-              -webkit-font-smoothing: antialiased;
-              vertical-align: middle;
-	      float: left;
-	  }
+      a {
+          color: #fdfdfd;
+          text-decoration: none;
+      }
+      &:before {
+          margin: 0 0 0 -50px;
+          content: "\f205";
+          display: inline-block;
+          font: normal 30px/1 'dashicons';
+          -webkit-font-smoothing: antialiased;
+          vertical-align: middle;
+          float: left;
+        }
     }
 
     cite {
         margin: 15px 0 0 0;
         font-weight: bold;
-	font-style: normal;
-	font-size: 80%;
+        font-style: normal;
+        font-size: 80%;
         display: block;
-	color: #000;
-
-	a {
-	    color: #000;
-	}
+        color: #000;
+        a {
+            color: #000;
+        }
     }
-
 
     table {
       display: block;

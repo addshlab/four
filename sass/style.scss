@@ -230,23 +230,25 @@ article .meta {
     order: 1;
   }
 
-  article {
-    .content {
-      > * {
-        margin: 20px 0 20px 150px;
-      }
 
-      h2 {
-        padding: 10px 150px 7px 150px;
-      }
+    article {
+        .content {
+            > * {
+                margin: 20px 0 20px 150px;
+            }
 
-      pre, blockquote {
-	border-radius: 0 5px 5px 0;
-        padding: 30px 150px;
-	  &:before {
-            margin: 0 0 0 -50px;
-	  }
-      }
+            h2 {
+                //padding: 10px 150px 7px 150px;
+                margin: 0 0 0 150px;
+                padding: 10px 150px 7px 0;
+            }
+            pre, blockquote {
+                border-radius: 0 5px 5px 0;
+                padding: 30px 150px;
+                &:before {
+                    margin: 0 0 0 -50px;
+                }
+            }
 
       * * {
         margin: 0;
