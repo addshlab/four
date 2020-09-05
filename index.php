@@ -73,12 +73,12 @@
 <?php elseif ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <?php
-	// その日最初の投稿チェック
-	if( $post_day_check !== get_post_time( 'Y-m-d', false ) ) {
-		$sameDayFlag = true;
-	} else {
-		$sameDayFlag = false;
-	}
+    // その日最初の投稿チェック
+    if( $post_day_check !== get_post_time( 'Y-m-d', false ) ) {
+        $sameDayFlag = true;
+    } else {
+        $sameDayFlag = false;
+    }
 ?>
 
         <article id="post-<?php the_ID(); ?>" <?php post_class( $sameDayFlag ); ?>>
@@ -92,15 +92,17 @@
             <?php if ( is_home() || is_single() || is_archive() || is_search() ) : ?>
             <header>
                 <ul class="meta">
-		    <li class="post-date">
+                    <li class="post-date">
                         POST DATE: 
                         <time datetime="<?php echo get_post_time( 'Y-m-d\TH:i:s\Z', false ); ?>">
                         <?php echo get_post_time( 'Y-m-d', false ); ?>
                         </time>
-		    </li>
-		    <li>
+                    </li>
+                    <?php if( is_single() || is_page() ) : ?>
+                    <li>
                         WORD COUNT: <?php echo mb_strlen( strip_tags( get_the_content() ) ); ?>
                     </li>
+                    <?php endif; ?>
                 </ul>
             </header>
             <?php endif; ?>
@@ -150,21 +152,21 @@
             <?php if ( ! is_front_page() && ( is_single() || is_page() ) ) : ?>
             <footer>
                 <ul class="meta">
-		    <li class="post-date">
+                    <li class="post-date">
                         POST DATE: 
                         <time datetime="<?php echo get_post_time( 'Y-m-d\TH:i:s\Z', false ); ?>">
                         <?php echo get_post_time( 'Y-m-d H:i:sP', false ); ?>
                         </time>(GMT: <time datetime="<?php echo get_post_time( 'Y-m-d\TH:i:s\Z', true ); ?>"><?php echo get_post_time( 'Y-m-d H:i:sP', true ); ?></time>)
                     </li>
                     <?php if ( get_post_time( 'U' ) !== get_post_modified_time( 'U' ) ) : ?>
-		    <li class="last-modified">
+                    <li class="last-modified">
                         LAST MODIFIED: 
                         <time datetime="<?php echo get_post_modified_time( 'Y-m-d\TH:i:s\Z', false ); ?>">
                         <?php echo get_post_modified_time( 'Y-m-d H:i:sP', false ); ?>
                         </time>(GMT: <time datetime="<?php echo get_post_modified_time( 'Y-m-d\TH:i:s\Z', true ); ?>"><?php echo get_post_modified_time( 'Y-m-d H:i:sP', true ); ?></time>)
                     </li>
                     <?php endif; ?>
-		    <?php if ( has_category() ) : ?>
+                    <?php if ( has_category() ) : ?>
                     <li class="post-category">CATEGORY: <?php the_category( ', ' ); ?></li>
                     <?php endif; ?>
                     <?php if ( has_tag() ) : ?>
@@ -172,8 +174,6 @@
                     <?php endif; ?>
                 </ul>
             </footer>
-
-
             <?php endif; ?>
         </article>
     
