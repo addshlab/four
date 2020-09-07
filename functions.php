@@ -162,6 +162,7 @@ function custom_theme_setup() {
     add_theme_support( 'custom-logo' );
     add_theme_support( 'editor-styles' );
     add_editor_style( 'editor-style.css' );
+    add_post_type_support( 'page', 'excerpt' );
 }
 add_action( 'after_setup_theme', 'custom_theme_setup' );
 
@@ -183,18 +184,21 @@ add_filter( 'pre_get_document_title', 'wpdocs_hack_wp_title_for_home' );
 /**
  * Meta Description のカスタマイズ
  */
- function add_meta_description() {
-     global $post;
-
-     if ( is_home() ) {
-        $content = get_bloginfo( 'description' );
+function add_meta_description() {
+    global $post;
+    if ( is_home() || is_front_page() ) {
+        if ( $post->post_excerpt ) {
+            $content = esc_attr( $post->post_excerpt );
+        } else {
+            $content = get_bloginfo( 'description' );
+        }
     } elseif ( is_singular() ) {
-        if ( $post->post_except ) {
+        if ( $post->post_excerpt ) {
             $content = esc_attr( $post->post_excerpt );
         } else {
             $content = esc_attr( strip_tags( $post->post_content ) );
             $content = preg_replace( "/[\r\n]/", " ", $content );
-             $content = mb_strimwidth( $content, 0, 100, "..." );    
+            $content = mb_strimwidth( $content, 0, 100, "..." );    
         }
     } else {
         return;
