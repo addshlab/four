@@ -63,13 +63,20 @@ header.global {
   h1, p {
     margin: 0 20px 20px 20px;
     font-size: 250%;
-    font-family: serif;
+    font-family: sans-serif;
     font-weight: bold;
     line-height: 1em;
+    &.sitename {
+        font-family: serif;
+        img {
+            background: var(--site-logo-bg);
+            padding: 10px;
+            border-radius: 3px;
+        }
+    }
   }
-
   .subtitle {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-size: 150%;
   }
 
@@ -238,9 +245,8 @@ article .meta {
             }
 
             h2 {
-                //padding: 10px 150px 7px 150px;
                 margin: 0 0 0 150px;
-                padding: 10px 150px 7px 0;
+               // padding: 10px 150px 7px 0;
             }
             pre, blockquote {
                 border-radius: 0 5px 5px 0;
@@ -257,7 +263,7 @@ article .meta {
 
     header {
       border-radius: 0 3px 3px 0;
-      margin: -1px 0 0 0;
+      margin: 0;
       padding: 7px 20px 7px 150px;
       background: var(--article-header-bg);
       .title {
@@ -386,9 +392,17 @@ header, footer {
 }
 
 body.archive {
+    article header {
+        margin: -2px 0 0 0;
+    }
     h2 {
-        border: none;
+        border-bottom: 1px dashed #ccc;
+        padding: 10px 0;
         font-size: 100%;
         font-weight: normal;
+        z-index: -1;
+        &:after {
+            border: none;
+        }
     }
 }

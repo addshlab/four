@@ -23,17 +23,17 @@
     </div>
 
     <?php if ( is_home() || is_front_page() ) : ?>
-    <h1>
+    <h1 class="sitename">
     <?php else : ?>
-    <p>
+    <p class="sitename">
     <?php endif; ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
         <?php if ( has_custom_logo() ) : ?>
         <?php the_custom_logo(); ?>
         <?php else : ?>
-        <?php bloginfo( 'name' ); ?>
-        <?php endif; ?>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <?php bloginfo( 'name' ); ?>
         </a>
+        <?php endif; ?>
     <?php if ( is_home() || is_front_page() ) : ?>
     </h1>
     <?php else : ?>
@@ -75,13 +75,15 @@
 <?php
     // その日最初の投稿チェック
     if( $post_day_check !== get_post_time( 'Y-m-d', false ) ) {
-        $sameDayFlag = true;
+        $sameDayFlag  = true;
+        $sameDayClass = 'same-day-first-post';
     } else {
         $sameDayFlag = false;
+        $sameDayClass = '';
     }
 ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class( $sameDayFlag ); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class( $sameDayClass ); ?>>
         <?php if( $sameDayFlag ) : ?>
 <?php
 /**
@@ -107,7 +109,7 @@
             </header>
             <?php endif; ?>
 
-        <?php endif; ?>
+        <?php endif; // sameDayFlag ?>
 <?php
 /**
  * 投稿内容の表示
@@ -121,12 +123,11 @@
             <?php wp_link_pages(); ?>
             <?php elseif ( is_archive() || is_home() || is_search() ) : ?>
             <div class="content">
-
-            <h2 class="title">
-                <a href="<?php the_permalink(); ?>">
-                    <?php echo mb_substr( get_the_title(), 0, 100 ); ?><?php if ( mb_strlen( get_the_title() ) === 0 ) : echo '(no title)' ; elseif ( mb_strlen( get_the_title() ) >= 100 ) : echo ' ...'; endif; ?>
-                </a>
-            </h2>
+                <h2 class="title">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php echo mb_substr( get_the_title(), 0, 100 ); ?><?php if ( mb_strlen( get_the_title() ) === 0 ) : echo '(no title)' ; elseif ( mb_strlen( get_the_title() ) >= 100 ) : echo ' ...'; endif; ?>
+                    </a>
+                </h2>
             </div> <!-- .content -->
             <?php else : ?>
             <div class="excerpt">

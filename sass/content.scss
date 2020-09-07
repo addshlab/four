@@ -1,16 +1,26 @@
 @import 'color.scss';
 
 h2 {
-    border-bottom: 5px solid var(--article-h2-border);
-    margin: 0 20px;
-    padding: 10px 0 5px 0;
+    border-bottom: 2px dotted var(--article-h2-border);
+    margin: 0 20px 0 20px;
+    padding: 10px 0 15px 0;
     font-weight: bold;
-    font-size: 150%;
+    font-size: 130%;
     font-family: sans-serif;
     line-height: 1.2em;
     color: var(--article-h2);
+    position: relative;
     a {
         text-decoration: none;
+    }
+    &:after {
+        content: '';
+        border-bottom: 2px dotted var(--article-h2-border);
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        width: 100%;
+        display: block;
     }
 }
 
