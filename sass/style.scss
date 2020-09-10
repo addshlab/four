@@ -282,7 +282,7 @@ article .meta {
 
   .sidebar {
     order: 2;
-    margin-left: 30px;
+    margin-left: 100px;
     flex-basis: 200px;
 
     aside {
@@ -315,12 +315,12 @@ article .meta {
 }
 
 .sidebar {
-  font-size: 90%;
+    font-size: 90%;
+    font-family: monospace;
 
   h2 {
+    margin: 0 0 10px 0;
     font-size: 140%;
-    font-weight: normal;
-    font-family: serif;
     color: var(--article-h2);
   }
 
@@ -330,8 +330,13 @@ article .meta {
   }
 
   li {
-    margin: 0 0 0 1.7em;
-    list-style: disc;
+    margin: 0 0 3px 0;
+    padding: 0 0 2px 0;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+    a {
+        text-decoration: none;
+    }
   }
 }
 
