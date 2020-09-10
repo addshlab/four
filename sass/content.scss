@@ -1,5 +1,14 @@
 @import 'color.scss';
 
+figure.wp-block-image {
+    margin: 0;
+    img {
+        max-width: 100%;
+        //max-width: 700px;
+        height: 100%;
+    }
+}
+
 h2 {
     border-bottom: 2px dotted var(--article-h2-border);
     margin: 0 20px 0 20px;
