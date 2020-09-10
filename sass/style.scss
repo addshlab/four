@@ -401,12 +401,14 @@ body.archive {
     article header {
         margin: -2px 0 0 0;
     }
-    h2 {
+    article .content {
         border-bottom: 1px dashed #ccc;
+    }
+    h2 {
+        border: none;
         padding: 10px 0;
         font-size: 100%;
         font-weight: normal;
-        z-index: -1;
         &:after {
             border: none;
         }
