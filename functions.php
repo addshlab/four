@@ -133,11 +133,11 @@ add_action( 'wp_footer', 'darkmode_js' );
 
 function dark_mode_checked() {
     if ( $color_theme_value = $_COOKIE['color_theme_value'] ) {
-	if ( 'dark' === $color_theme_value ) {
+        if ( 'dark' === $color_theme_value ) {
             echo 'checked';
-	} else {
-	    echo '';
-	}
+        } else {
+            echo '';
+        }
     } else {
         echo '';
     }
