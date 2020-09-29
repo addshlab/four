@@ -23,6 +23,7 @@ Text Domain: four
 
 body {
     font-family: sans-serif;
+    font-size: 90%;
     line-height: 1.7;
     word-break: break-all;
     display: flex;
@@ -316,7 +317,6 @@ article .meta {
 }
 
 .sidebar {
-    font-size: 90%;
     font-family: monospace;
 
   h2 {
