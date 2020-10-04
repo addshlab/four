@@ -53,7 +53,7 @@
     <?php endif; ?>
 </header>
 
-<?php // CONTENTS // ?>
+<div class="container">
 
 <main class="main">
 
@@ -220,6 +220,7 @@ $post_day_check = get_post_time( 'Y-m-d', false );
 </aside>
 <?php endif; ?>
 
+</div> <!-- .container -->
 
 <?php
 /**

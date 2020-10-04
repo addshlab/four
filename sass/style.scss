@@ -26,8 +26,6 @@ body {
     font-size: 90%;
     line-height: 1.7;
     word-break: break-all;
-    display: flex;
-    flex-flow: row wrap;
     margin: 0;
     background-color: var(--body-bg);
     color: var(--text-color);
@@ -225,6 +223,13 @@ article .meta {
 }
 
 @media all and (min-width: 960px) {
+
+  .container {
+        max-width: 1470px;
+        display: flex;
+        flex-flow: row wrap;
+  }
+
   header.global {
     margin: 0;
 
@@ -283,9 +288,8 @@ article .meta {
 
   .sidebar {
     order: 2;
-    margin-right: 150px;
     margin-left: 100px;
-    flex-basis: 200px;
+    flex: 400px;
 
     aside {
       margin: 0 0 20px 0;
