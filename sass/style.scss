@@ -224,11 +224,13 @@ article .meta {
 
 @media all and (min-width: 960px) {
 
-  .container {
-        max-width: 1470px;
-        display: flex;
-        flex-flow: row wrap;
-  }
+    .single, .page {
+        .container {
+            max-width: 1470px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+    }
 
   header.global {
     margin: 0;
