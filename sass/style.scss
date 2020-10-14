@@ -232,6 +232,13 @@ article .meta {
         }
     }
 
+    .home.single, .home.page {
+        .container {
+            max-width: 100%;
+            display: block;
+        }
+    }
+
   header.global {
     margin: 0;
 
