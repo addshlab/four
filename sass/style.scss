@@ -224,7 +224,7 @@ article .meta {
 
 @media all and (min-width: 960px) {
 
-    .single, .page {
+    .single, .page, .archive {
         .container {
             max-width: 1470px;
             display: flex;
@@ -417,13 +417,15 @@ body.archive {
     article .content {
         border-bottom: 1px dashed #ccc;
     }
-    h2 {
-        border: none;
-        padding: 10px 0;
-        font-size: 100%;
-        font-weight: normal;
-        &:after {
+    .main {
+        h2 {
             border: none;
+            padding: 10px 0;
+            font-size: 100%;
+            font-weight: normal;
+            &:after {
+                border: none;
+            }
         }
     }
 }
